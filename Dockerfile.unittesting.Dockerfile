@@ -22,7 +22,7 @@
 
 # Dockerfile for testing HMS s3 code.
 
-FROM dtr.dev.cray.com/baseos/golang:1.14-alpine3.12 AS build-base
+FROM arti.dev.cray.com/baseos-docker-master-local/golang:1.14-alpine3.12 AS build-base
 
 RUN set -ex \
     && apk update \
