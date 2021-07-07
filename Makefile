@@ -1,4 +1,4 @@
-NAME ?= hms-base
+NAME ?= hms-s3
 VERSION ?= $(shell cat .version)
 
 all : image unittest
