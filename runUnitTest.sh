@@ -22,7 +22,7 @@
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
-set -ex
+set -x
 # Setup environment variables
 #export GOPATH=$(pwd)/go
 RANDY=$(echo $RANDOM | md5sum | awk '{print $1}')
@@ -49,8 +49,7 @@ echo "RANDY: ${RANDY}"
 echo "Compose project name: $COMPOSE_PROJECT_NAME"
 
 # It's possible we don't have docker-compose, so if necessary bring our own.
-# The || true prevents the command from failing. This prevents an early exit with set -e set.
-docker_compose_exe=$(command -v docker-compose || true)
+docker_compose_exe=$(command -v docker-compose)
 if ! [[ -x "$docker_compose_exe" ]]; then
   if ! [[ -x "./docker-compose" ]]; then
     echo "Getting docker-compose..."
