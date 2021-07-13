@@ -12,7 +12,7 @@ pipeline {
 
     environment {
         NAME = "hms-s3"
-        DESCRIPTION = "Cray AWS S3 library"
+        DESCRIPTION = "Cray HMS S3 code."
         IS_STABLE = getBuildIsStable()
         VERSION = getDockerBuildVersion(isStable: env.IS_STABLE)
         DOCKER_ARGS = getDockerBuildArgs(name: env.NAME, description: env.DESCRIPTION)
