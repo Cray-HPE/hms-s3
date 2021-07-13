@@ -49,7 +49,8 @@ echo "RANDY: ${RANDY}"
 echo "Compose project name: $COMPOSE_PROJECT_NAME"
 
 # It's possible we don't have docker-compose, so if necessary bring our own.
-docker_compose_exe=$(command -v docker-compose)
+# The || true prevents the command from failing. This prevents an early exit with set -e set.
+docker_compose_exe=$(command -v docker-compose || true)
 if ! [[ -x "$docker_compose_exe" ]]; then
   if ! [[ -x "./docker-compose" ]]; then
     echo "Getting docker-compose..."
