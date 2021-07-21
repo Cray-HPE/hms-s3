@@ -33,11 +33,11 @@ FROM build-base
 
 RUN go env -w GO111MODULE=auto
 
-COPY *.go $GOPATH/src/stash.us.cray.com/HMS/hms-s3/
-COPY vendor $GOPATH/src/stash.us.cray.com/HMS/hms-s3/vendor
+COPY *.go $GOPATH/src/github.com/Cray-HPE/hms-s3/
+COPY vendor $GOPATH/src/github.com/Cray-HPE/hms-s3/vendor
 
 ENV LOG_LEVEL "TRACE"
 
 # if you do CMD, then it will run like a service; we want this to run the tests and quit
 RUN set -ex \
-    && go test -cover -v -o hms-s3 stash.us.cray.com/HMS/hms-s3/...
+    && go test -cover -v -o hms-s3 github.com/Cray-HPE/hms-s3/...
