@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#
 # MIT License
 #
-# (C) Copyright [2021] Hewlett Packard Enterprise Development LP
+# (C) Copyright 2022 Hewlett Packard Enterprise Development LP
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -20,28 +20,11 @@
 # OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
-
-# When it's time to update the version information, use this script as a person
-
-CHANGELOG=../CHANGELOG.md
-
-if [ ! -f $CHANGELOG ]; then
-    if [ -f CHANGELOG.md ]; then
-        CHANGELOG=CHANGELOG.md
-    else
-        echo $0: CHANGELOG.md not found in . or .. 1>&2; exit 1
-    fi
-fi
-
-echo "Detecting the version from the $CHANGELOG..."
-VERSION=$(grep -m1 \#\# $CHANGELOG | sed -e "s/\].*$//" -e "s/^.*\[//")
-echo "Version = $VERSION"
-
-echo "Add the version to the VERSION file"
-echo ${VERSION} > $(dirname $CHANGELOG)/version
-
-# tag it
-git commit -am "Version $VERSION"
-git tag -a "v$VERSION" -m "Version $VERSION"
-git push
-git push --tags
+#
+name: Run Unit Tests
+on: [push, pull_request]
+jobs:
+  run_unit_test:
+    uses: Cray-HPE/hms-build-scripts/.github/workflows/run_unit_test.yaml@master
+    with:
+      runs-on: ubuntu-latest
