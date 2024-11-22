@@ -1,5 +1,5 @@
 # github.com/aws/aws-sdk-go v1.40.14
-## explicit
+## explicit; go 1.11
 github.com/aws/aws-sdk-go/aws
 github.com/aws/aws-sdk-go/aws/arn
 github.com/aws/aws-sdk-go/aws/awserr
@@ -55,8 +55,10 @@ github.com/aws/aws-sdk-go/service/sts/stsiface
 ## explicit
 github.com/davecgh/go-spew/spew
 # github.com/jmespath/go-jmespath v0.4.0
+## explicit; go 1.14
 github.com/jmespath/go-jmespath
 # github.com/pmezard/go-difflib v1.0.0
+## explicit
 github.com/pmezard/go-difflib/difflib
 # github.com/stretchr/testify v1.4.0
 ## explicit
@@ -64,4 +66,5 @@ github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
 github.com/stretchr/testify/suite
 # gopkg.in/yaml.v2 v2.2.8
+## explicit
 gopkg.in/yaml.v2
