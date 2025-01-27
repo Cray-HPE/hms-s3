@@ -3,7 +3,7 @@ module github.com/Cray-HPE/hms-s3
 go 1.23
 
 require (
-	github.com/aws/aws-sdk-go v1.40.14
+	github.com/aws/aws-sdk-go v1.55.6
 	github.com/stretchr/testify v1.4.0
 )
 
