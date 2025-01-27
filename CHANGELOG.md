@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 - Update module dependencies
+- Remove deprecated Version from docker compose files
+- Replace "docker-compose" with "docker compose" in runUnitTest.sh
 
 ## [1.11.0] - 2024-11-22
 
